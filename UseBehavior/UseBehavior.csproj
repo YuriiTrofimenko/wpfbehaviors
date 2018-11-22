@@ -38,13 +38,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BehaviorLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\BehaviorLib\BehaviorLib\bin\Release\BehaviorLib.dll</HintPath>
-    </Reference>
-    <Reference Include="CustomPanelsLib">
-      <HintPath>..\..\CustomPanelsLib\CustomPanelsLib\bin\Debug\CustomPanelsLib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -107,6 +100,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BehaviorLib\BehaviorLib.csproj">
+      <Project>{7df1e0ab-fbf4-4fdd-8aac-6d427a893172}</Project>
+      <Name>BehaviorLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomPanelsLib\CustomPanelsLib.csproj">
+      <Project>{f78751ee-58c2-4acf-9b14-a14ec7f2cff8}</Project>
+      <Name>CustomPanelsLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

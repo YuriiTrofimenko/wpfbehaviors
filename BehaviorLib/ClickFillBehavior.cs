@@ -23,8 +23,6 @@ namespace BehaviorLib
 
             // Присоединение обработчиков событий
             this.AssociatedObject.MouseLeftButtonDown += AssociatedObject_MouseLeftButtonDown;
-            //this.AssociatedObject.MouseMove += AssociatedObject_MouseMove;
-            //this.AssociatedObject.MouseLeftButtonUp += AssociatedObject_MouseLeftButtonUp;
         }
 
         protected override void OnDetaching()
@@ -33,15 +31,7 @@ namespace BehaviorLib
 
             // Удаление обработчиков событий
             this.AssociatedObject.MouseLeftButtonDown -= AssociatedObject_MouseLeftButtonDown;
-            //this.AssociatedObject.MouseMove -= AssociatedObject_MouseMove;
-            //this.AssociatedObject.MouseLeftButtonUp -= AssociatedObject_MouseLeftButtonUp;
         }
-
-        // Отслеживание перетаскивания элемента
-        //private bool isDragging = false;
-
-        // Запись точной позиции, в которой нажата кнопка
-        //private Point mouseOffset;
 
         private void AssociatedObject_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -66,39 +56,7 @@ namespace BehaviorLib
 
             AssociatedObject.GetType()
                 .GetProperty("Fill")
-                .SetValue((AssociatedObject), new SolidColorBrush(resultColor));
-
-            
-            // Режим перетаскивания
-            //isDragging = true;
-
-            // Получение позиции нажатия относительно элемента
-            //mouseOffset = e.GetPosition(AssociatedObject);
-
-            // Захват мыши
-            //AssociatedObject.CaptureMouse();
+                .SetValue(AssociatedObject, new SolidColorBrush(resultColor));
         }
-
-        /*private void AssociatedObject_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isDragging)
-            {
-                // Получение позиции элемента относительно Canvas
-                Point point = e.GetPosition(canvas);
-
-                // Move the element.
-                AssociatedObject.SetValue(Canvas.TopProperty, point.Y - mouseOffset.Y);
-                AssociatedObject.SetValue(Canvas.LeftProperty, point.X - mouseOffset.X);
-            }
-        }*/
-
-        /*private void AssociatedObject_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            if (isDragging)
-            {
-                AssociatedObject.ReleaseMouseCapture();
-                isDragging = false;
-            }
-        }*/
     }
 }

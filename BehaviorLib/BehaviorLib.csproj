@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CustomPanelsLib">
-      <HintPath>..\..\CustomPanelsLib\CustomPanelsLib\bin\Debug\CustomPanelsLib.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -51,6 +48,12 @@
     <Compile Include="ClickFillBehavior.cs" />
     <Compile Include="DragInCanvasBehavior.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomPanelsLib\CustomPanelsLib.csproj">
+      <Project>{f78751ee-58c2-4acf-9b14-a14ec7f2cff8}</Project>
+      <Name>CustomPanelsLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
